@@ -1,0 +1,32 @@
+.header-container {
+    display: flex;
+    align-items: center;  
+    background-color: #F5F1E3;
+    padding: 5px;
+}
+
+.header-button {
+    margin-right: 16px;
+}
+
+.header-text {
+    margin: 0 5px 0 15px;
+    font-size: 0.875rem;
+    color: #274235;
+    font-weight: 500;
+}
+
+.dropdown {
+    background-color: #F5F1E3;
+    border-color: #274235;
+    border-radius: 4px;
+    border-width: 2px;
+    color: #274235;
+    height: 36px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+select {
+    outline: none;
+}

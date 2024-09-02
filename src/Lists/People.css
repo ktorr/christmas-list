@@ -1,0 +1,70 @@
+.banner {
+    background-image: url('../Pictures/ChristmasTree.jpg');
+    display: flex;
+    height: 175px;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    color: #9BA694;
+    font-size: 70px;
+    text-shadow: 5px 2px 5px black;
+}
+
+.body {
+    background-color: #F5F1E3;
+    height: 100vh;
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between the list sections */
+    gap: 20px; /* Optional: Adds space between the two sections */
+}
+
+.list-section {
+    flex: 1; /* Makes each section take up equal space */
+}
+
+.list-header {
+    display: flex;
+    align-items: center; /* Aligns the h2 and the button vertically */
+    justify-content: center; /* Centers the h2 and button horizontally */
+    position: relative;
+}
+
+h2 {
+    color: #274235;
+    padding-bottom: none;
+    font-size: 40px;
+}
+
+.unpurchased-items{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.unpurchased-list {
+    list-style-type: none;
+    padding-left: 0;
+    color: #274235;
+    font-size: larger;
+}
+
+.purchased-items{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+.purchased-list {
+    list-style-type: none;
+    padding-left: 0;
+    color: #274235;
+    font-size: larger;
+}
