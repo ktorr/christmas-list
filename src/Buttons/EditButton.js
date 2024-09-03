@@ -32,7 +32,17 @@ function EditButton({item, onSave}) {
 
     return (
         <div>
-            <Tooltip title="Edit">
+            <Tooltip title="Edit"
+                PopperProps={{
+                    modifiers: [
+                        {
+                            name: 'offset',
+                            options: {
+                                offset: [0, -15], // Adjust the offset to move tooltip
+                            },
+                        },
+                    ],
+                }}>
                 <IconButton className="edit-button" onClick={handleEditOpen} size="small" sx={{color:'#274235'}}>
                     <EditIcon />
                 </IconButton>

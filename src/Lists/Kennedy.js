@@ -8,7 +8,8 @@ import MoveButton from '../Buttons/MoveButton';
 
 function Kennedy() {
     // const { items } = useFirestore('listItems');
-    const { items, editItem, deleteItem, moveItem } = useFirestore('listItems');
+    const listId = 'listID5';
+    const { items, editItem, deleteItem, moveItem } = useFirestore(listId);
     const [selectedItem, setSelectedItem] = useState(null);
 
     const handleSave = (id, name, link) => {
@@ -20,8 +21,8 @@ function Kennedy() {
         deleteItem(id);
     };
 
-    const handleMove = (id, name, link, purchased) => {
-        moveItem(id, name, link, !purchased);
+    const handleMove = (id, currentPurchased) => {
+        moveItem(id, !currentPurchased);
     };
 
     return (
@@ -33,7 +34,7 @@ function Kennedy() {
                 <div className="list-section">
                     <div className="list-header">
                         <h2>List</h2>
-                        <AddButton/>
+                        <AddButton listId={listId}/>
                     </div>
                     <ul className="unpurchased-list">
                         {items.filter(item => !item.purchased).map(item => (

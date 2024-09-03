@@ -16,6 +16,7 @@ import Kennedy from './Lists/Kennedy';
 import Evelyn from './Lists/Evelyn';
 import Matthew from './Lists/Matthew';
 import Nicolas from './Lists/Nicolas';
+import WishList from './Lists/WishLists';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 
@@ -38,7 +39,7 @@ function App() {
                   <Route path="/Emmie" element={<Emmie />} />
                   <Route path="/Anthony" element={<Anthony />} />
                   <Route path="/Madison" element={<Madison />} />
-                  <Route path="/Kennedy" element={<Kennedy />} />
+                  <Route path="/Kennedy" element={<Kennedy/>} />
                   <Route path="/Evelyn" element={<Evelyn />} />
                   <Route path="/Matthew" element={<Matthew />} />
                   <Route path="/Nicolas" element={<Nicolas />} />

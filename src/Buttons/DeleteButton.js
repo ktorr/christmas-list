@@ -28,7 +28,17 @@ function DeleteButton({item, onDelete}) {
 
     return (
         <div>
-            <Tooltip title="Delete">
+            <Tooltip title="Delete"
+                PopperProps={{
+                    modifiers: [
+                        {
+                            name: 'offset',
+                            options: {
+                                offset: [0, -15], // Adjust the offset to move tooltip
+                            },
+                        },
+                    ],
+                }}>
                 <IconButton onClick={handleDeleteOpen} size="small" sx={{color:'#8B0000', marginRight:'5px'}}>
                     <DeleteIcon />
                 </IconButton>

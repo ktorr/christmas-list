@@ -10,11 +10,11 @@ import AddIcon from '@mui/icons-material/Add';
 import useFirestore from '../useFirestore';
 import Tooltip from '@mui/material/Tooltip';
 
-function AddButton() {
+function AddButton({listId}) {
     const [open, setOpen] = useState(false);
     const [newItem, setNewItem] = useState('');
     const [newItemLink, setNewItemLink] = useState('');
-    const { addItem }  = useFirestore('listItems');
+    const { addItem }  = useFirestore(listId);
 
     const handleOpen = () => {
         setOpen(true);
@@ -41,7 +41,17 @@ function AddButton() {
 
     return (
         <div>
-            <Tooltip title="Add New Item">
+            <Tooltip title="Add New Item"
+                PopperProps={{
+                    modifiers: [
+                        {
+                            name: 'offset',
+                            options: {
+                                offset: [0, -5], // Adjust the offset to move tooltip
+                            },
+                        },
+                    ],
+                }}>
                 <IconButton aria-label="add" size="medium" sx={{marginLeft: '5px', color: '#274235'}} onClick={handleOpen}>
                     <AddIcon sx={{fontSize: '35px'}}/>
                 </IconButton>

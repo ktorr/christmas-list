@@ -5,7 +5,7 @@ import Faces from './Faces';
 
 function Home() {
     return (
-        <div>
+        <div className="home-container">
             <div className="banner">
                 <h1 className="title">Christmas Wish Lists</h1>
             </div>
