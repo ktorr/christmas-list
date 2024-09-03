@@ -1,9 +1,6 @@
 import React from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
-import KennedyPic from './Pictures/Kennedy.JPG';
-import GracePic from './Pictures/Grace.jpg';
-import NicolasPic from './Pictures/Nicolas.jpg';
 
 function ImageGrid() {
     const names = [
