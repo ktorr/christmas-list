@@ -10,8 +10,8 @@ function Header() {
     const [selectedPage, setSelectedPage] = useState('/christmas-list');
 
     const handleHomeClick = () => {
-        setSelectedPage('/'); // Reset to home
-        navigate('/');
+        setSelectedPage('/christmas-list'); // Reset to home
+        navigate('/christmas-list');
     };
 
     return (
