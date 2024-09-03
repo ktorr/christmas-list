@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
     const navigate = useNavigate();
-    const [selectedPage, setSelectedPage] = useState('/');
+    const [selectedPage, setSelectedPage] = useState('/christmas-list');
 
     const handleHomeClick = () => {
         setSelectedPage('/'); // Reset to home
