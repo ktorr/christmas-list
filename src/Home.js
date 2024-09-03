@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import Faces from './Faces';
+import Names from './Names';
 
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
                 <h1 className="title">Christmas Wish Lists</h1>
             </div>
             <div>
-                <Faces/>
+                <Names/>
             </div>
         </div>
     );
