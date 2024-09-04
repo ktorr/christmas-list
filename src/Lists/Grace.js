@@ -21,8 +21,8 @@ function Grace() {
         deleteItem(id);
     };
 
-    const handleMove = (id, name, link, purchased) => {
-        moveItem(id, name, link, !purchased);
+    const handleMove = (id, currentPurchased) => {
+        moveItem(id, !currentPurchased);
     };
 
     return (
