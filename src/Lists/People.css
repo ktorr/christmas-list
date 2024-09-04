@@ -21,6 +21,7 @@
     display: flex;
     justify-content: space-between; /* Adjusts spacing between the list sections */
     gap: 20px; /* Optional: Adds space between the two sections */
+    background-color: #F5F1E3;
 }
 
 .list-section {
