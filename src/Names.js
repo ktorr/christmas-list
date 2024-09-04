@@ -34,6 +34,9 @@ function ImageGrid() {
         '/Anthony',
         '/Mateo',
         '/Lynda',
+        '/Evelyn',
+        '/Matthew',
+        '/Nicolas'
     ];
 
     const navigate = useNavigate();
