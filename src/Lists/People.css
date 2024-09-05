@@ -27,6 +27,7 @@
 @media (max-width: 768px) {
     .list-container {
         flex-direction: column; /* Stack the sections vertically */
+        padding-right: 20px;
     }
 }
 
@@ -53,6 +54,7 @@ h2 {
     margin-bottom: 15px;
     margin-left: 20px;
     font-weight: 500;
+    text-align: left;
 }
 
 .unpurchased-list {
@@ -68,6 +70,7 @@ h2 {
     margin-bottom: 15px;
     margin-left: 50px;
     font-weight: 500;
+    text-align: left;
 }
 
 .purchased-list {
@@ -75,4 +78,16 @@ h2 {
     padding-left: 0;
     color: #274235;
     font-size: larger;
+}
+
+a {
+    color: #274235;
+}
+
+a:visited {
+    color: #556B2F;
+}
+
+a:hover {
+    color: #8B0000;
 }
