@@ -73,6 +73,12 @@ h2 {
     text-align: left;
 }
 
+@media (max-width: 768px) {
+    .purchased-items {
+        margin-left: 20px;
+    }
+}
+
 .purchased-list {
     list-style-type: none;
     padding-left: 0;
