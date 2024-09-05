@@ -14,6 +14,7 @@ function EditButton({item, onSave}) {
     const [editOpen, setEditOpen] = useState(false);
     const [name, setName] = useState(item.name);
     const [link, setLink] = useState(item.link);
+    const [order, setOrder] = useState(item.order);
 
     const handleEditOpen = () => {
         setEditOpen(true);
@@ -25,7 +26,7 @@ function EditButton({item, onSave}) {
 
     const handleSave = () => {
         if (name.trim()) {
-            onSave(item.id, name.trim(), link.trim());
+            onSave(item.id, name.trim(), link.trim(), order);
             handleEditClose();
         }
     };
@@ -79,6 +80,26 @@ function EditButton({item, onSave}) {
                         variant="standard"
                         value={link}
                         onChange={(e) => setLink(e.target.value)}
+                        sx={{
+                            '& .MuiInput-underline:hover:before': {
+                                borderBottomColor: '#274235',
+                            },
+                            '& .MuiInput-underline:after': {
+                                borderBottomColor: '#274235',
+                            },
+                            '& .MuiInputLabel-root.Mui-focused': {
+                                color: '#274235',
+                            }
+                        }}
+                    />
+                    <TextField
+                        margin="dense"
+                        label="Item Order"
+                        type="number" // Input for order
+                        fullWidth
+                        variant="standard"
+                        value={order}
+                        onChange={(e) => setOrder(Number(e.target.value))} // Convert value to a number
                         sx={{
                             '& .MuiInput-underline:hover:before': {
                                 borderBottomColor: '#274235',

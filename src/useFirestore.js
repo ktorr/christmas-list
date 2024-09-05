@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { db, collection, addDoc, getDoc, onSnapshot, doc, updateDoc, deleteDoc } from './Firebase';
+import { db, collection, addDoc, getDoc, onSnapshot, doc, updateDoc, deleteDoc, query, orderBy } from './Firebase';
 
 const useFirestore = (listId) => {
     const [list, setList] = useState(null);
@@ -8,9 +8,10 @@ const useFirestore = (listId) => {
     useEffect(() => {
         const listRef = doc(db, 'lists', listId);
         const itemsRef = collection(listRef, 'listItems');
+        const itemsQuery = query(itemsRef, orderBy('order', 'asc'));
 
         // Subscribe to the items subcollection
-        const unsubscribe = onSnapshot(itemsRef, (snapshot) => {
+        const unsubscribe = onSnapshot(itemsQuery, (snapshot) => {
             const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setItems(data);
         }, (error) => {
@@ -23,16 +24,17 @@ const useFirestore = (listId) => {
     const addItem = async (name, link) => {
         try {
             const itemsRef = collection(db, 'lists', listId, 'listItems');
-            await addDoc(itemsRef, { name, link, purchased: false });
+            let nextOrder = items.length > 0 ? Math.max(...items.map(item => item.order)) + 1 : 1;
+            await addDoc(itemsRef, { name, link, purchased: false, order: nextOrder });
         } catch (error) {
             console.error('Error adding item: ', error);
         }
     };
 
-    const editItem = async (itemId, updatedName, updatedLink) => {
+    const editItem = async (itemId, updatedName, updatedLink, updatedOrder) => {
         try {
             const itemRef = doc(db, 'lists', listId, 'listItems', itemId);
-            await updateDoc(itemRef, { name: updatedName, link: updatedLink });
+            await updateDoc(itemRef, { name: updatedName, link: updatedLink, order: updatedOrder });
         } catch (error) {
             console.error('Error editing item: ', error);
         }
