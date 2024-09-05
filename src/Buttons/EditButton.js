@@ -94,7 +94,7 @@ function EditButton({item, onSave}) {
                     />
                     <TextField
                         margin="dense"
-                        label="Item Order"
+                        label="Order"
                         type="number" // Input for order
                         fullWidth
                         variant="standard"
@@ -109,7 +109,8 @@ function EditButton({item, onSave}) {
                             },
                             '& .MuiInputLabel-root.Mui-focused': {
                                 color: '#274235',
-                            }
+                            },
+                            width: '12.5%'
                         }}
                     />
                 </DialogContent>

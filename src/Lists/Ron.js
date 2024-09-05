@@ -12,8 +12,8 @@ function Ron() {
     const { items, editItem, deleteItem, moveItem } = useFirestore(listId);
     const [selectedItem, setSelectedItem] = useState(null);
 
-    const handleSave = (id, name, link) => {
-        editItem(id, name, link);
+    const handleSave = (id, name, link, order) => {
+        editItem(id, name, link, order);
         setSelectedItem(null); // Clear selected item after saving
     };
 
