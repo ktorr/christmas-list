@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
-import MoveIcon from '@mui/icons-material/DriveFileMove';
 import Tooltip from '@mui/material/Tooltip';
+import MoveIcon from '@mui/icons-material/SyncAlt';
 
 function MoveButton({item, onMove}) {
     const handleMove = () => {
@@ -22,7 +22,7 @@ function MoveButton({item, onMove}) {
                         },
                     ],
                 }}>
-                <IconButton className="move-button" onClick={handleMove} size="small" sx={{color:'#274235'}}>
+                <IconButton className="move-button" onClick={handleMove} size="medium" sx={{color:'#274235'}}>
                     <MoveIcon/>
                 </IconButton>
             </Tooltip>

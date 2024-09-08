@@ -7,11 +7,11 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
     const navigate = useNavigate();
-    const [selectedPage, setSelectedPage] = useState('/christmas-list');
+    const [selectedPage, setSelectedPage] = useState('/');
 
     const handleHomeClick = () => {
-        setSelectedPage('/christmas-list'); // Reset to home
-        navigate('/christmas-list');
+        setSelectedPage('/'); // Reset to home
+        navigate('/');
     };
 
     return (

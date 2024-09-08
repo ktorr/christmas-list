@@ -45,10 +45,10 @@ function ImageGrid() {
         <div className="name-container">
             <ul className="unordered-list">
                 {names.map((name, index) => (
-                    <li key={index} className="list-item">
+                    <li key={index} className="list-item" onClick={() => {navigate(paths[index]);}}>
                         {/* <img onClick={() => {navigate(paths[index]);}} src={img} alt={`Image ${index + 1}`} 
                         className="image"/> */}
-                        <span onClick={() => {navigate(paths[index]);}} className="name-decoration">
+                        <span className="name-decoration">
                             {name}
                         </span>
                     </li>

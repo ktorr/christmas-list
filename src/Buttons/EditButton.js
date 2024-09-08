@@ -44,7 +44,7 @@ function EditButton({item, onSave}) {
                         },
                     ],
                 }}>
-                <IconButton className="edit-button" onClick={handleEditOpen} size="small" sx={{color:'#274235'}}>
+                <IconButton className="edit-button" onClick={handleEditOpen} size="medium" sx={{color:'#274235'}}>
                     <EditIcon />
                 </IconButton>
             </Tooltip>

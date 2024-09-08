@@ -39,7 +39,7 @@ function DeleteButton({item, onDelete}) {
                         },
                     ],
                 }}>
-                <IconButton onClick={handleDeleteOpen} size="small" sx={{color:'#8B0000', marginRight:'5px'}}>
+                <IconButton onClick={handleDeleteOpen} size="medium" sx={{color:'#8B0000', marginRight:'5px'}}>
                     <DeleteIcon />
                 </IconButton>
             </Tooltip>

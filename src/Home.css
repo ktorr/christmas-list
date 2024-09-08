@@ -77,11 +77,13 @@
     }
 }
 
-.name-decoration:hover {
-    color: transparent;
-    background-position: right;
-    background: url('./Pictures/Glitter.jpeg') no-repeat center;
-    background-size: cover;
-    -webkit-background-clip: text;
-    background-clip: text;
+.list-item:hover {
+    .name-decoration {
+        color: transparent;
+        background-position: right;
+        background: url('./Pictures/Glitter.jpeg') no-repeat center;
+        background-size: cover;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
 }
