@@ -16,7 +16,7 @@ import Kennedy from './Lists/Kennedy';
 import Evelyn from './Lists/Evelyn';
 import Matthew from './Lists/Matthew';
 import Nicolas from './Lists/Nicolas';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 
 function App() {
