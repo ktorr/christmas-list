@@ -17,7 +17,7 @@ function PageDropdown({ selectedPage, setSelectedPage }) {
 
     return (
         <select className="dropdown" onChange={handleChange} value={selectedPage}>
-            <option value="/christmas-list">Select Name</option>
+            <option value="/">Select Name</option>
             <option value="/Abu">Abu</option>
             <option value="/Aba">Aba</option>
             <option value="/John">John</option>
