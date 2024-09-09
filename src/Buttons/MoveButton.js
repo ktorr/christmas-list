@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import MoveIcon from '@mui/icons-material/SyncAlt';
 
 function MoveButton({item, onMove}) {
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileView(window.innerWidth <= 768);
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const handleMove = () => {
-        // onMove(item.id, item.name, item.link, item.purchased);
         onMove(item.id, item.purchased);
     };
 
@@ -23,7 +38,11 @@ function MoveButton({item, onMove}) {
                     ],
                 }}>
                 <IconButton className="move-button" onClick={handleMove} size="medium" sx={{color:'#274235'}}>
-                    <MoveIcon/>
+                {isMobileView ? (
+                        <MoveIcon sx={{transform:'rotate(90deg) scaleY(-1)'}}/> // Mobile
+                    ) : (
+                        <MoveIcon /> // Default
+                    )}
                 </IconButton>
             </Tooltip>
         </div>
