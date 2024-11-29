@@ -52,12 +52,12 @@ function AddButton({listId}) {
                         },
                     ],
                 }}>
-                <IconButton aria-label="add" size="medium" sx={{marginLeft: '5px', color: '#274235'}} onClick={handleOpen}>
+                <IconButton aria-label="add" size="medium" sx={{marginLeft: '5px', color: '#1A4568'}} onClick={handleOpen}>
                     <AddIcon sx={{fontSize: '35px'}}/>
                 </IconButton>
             </Tooltip>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle sx={{color:'#274235'}}>Add New Item</DialogTitle>
+                <DialogTitle sx={{color:'#1A4568'}}>Add New Item</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
@@ -70,13 +70,13 @@ function AddButton({listId}) {
                         onChange={(e) => setNewItem(e.target.value)}
                         sx={{
                             '& .MuiInput-underline:hover:before': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInput-underline:after': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInputLabel-root.Mui-focused': {
-                                color: '#274235',
+                                color: '#1A4568',
                             }
                         }}
                     />
@@ -90,20 +90,20 @@ function AddButton({listId}) {
                         onChange={(e) => setNewItemLink(e.target.value)}
                         sx={{
                             '& .MuiInput-underline:hover:before': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInput-underline:after': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInputLabel-root.Mui-focused': {
-                                color: '#274235',
+                                color: '#1A4568',
                             }
                         }}
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleCancel} sx={{color:'#8B0000'}}>Cancel</Button>
-                    <Button onClick={handleAdd} disabled={!newItem.trim()} sx={{backgroundColor:'#274235', color:'white', '&:disabled': {
+                    <Button onClick={handleCancel} sx={{color:'#C44D58'}}>Cancel</Button>
+                    <Button onClick={handleAdd} disabled={!newItem.trim()} sx={{backgroundColor:'#1A4568', color:'white', '&:disabled': {
                         backgroundColor: 'lightgray', color: 'darkgray'}}}>
                         Add
                     </Button>

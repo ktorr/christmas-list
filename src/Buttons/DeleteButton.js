@@ -39,18 +39,18 @@ function DeleteButton({item, onDelete}) {
                         },
                     ],
                 }}>
-                <IconButton onClick={handleDeleteOpen} size="medium" sx={{color:'#8B0000', marginRight:'5px'}}>
+                <IconButton onClick={handleDeleteOpen} size="medium" sx={{color:'#1A4568', marginRight:'5px'}}>
                     <DeleteIcon />
                 </IconButton>
             </Tooltip>
             <Dialog open={deleteOpen} onClose={handleDeleteClose}>
-                <DialogTitle sx={{color:'#274235', fontWeight:'500'}}>Delete Item</DialogTitle>
-                <DialogContent sx={{color:'#274235', fontSize:'20px'}}>
+                <DialogTitle sx={{color:'#1A4568', fontWeight:'500'}}>Delete Item</DialogTitle>
+                <DialogContent sx={{color:'#1A4568', fontSize:'20px'}}>
                     Are you sure you want to delete this item?
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleDeleteClose} sx={{color:'#274235'}}>Cancel</Button>
-                    <Button onClick={handleDeleteConfirm} sx={{backgroundColor:'#8B0000', color:'white'}}>Delete</Button>
+                    <Button onClick={handleDeleteClose} sx={{color:'#1A4568'}}>Cancel</Button>
+                    <Button onClick={handleDeleteConfirm} sx={{backgroundColor:'#C44D58', color:'white'}}>Delete</Button>
                 </DialogActions>
             </Dialog>
         </div>

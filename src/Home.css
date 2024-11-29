@@ -1,5 +1,8 @@
 .banner {
-    background-image: url('./Pictures/ChristmasTree.jpg');
+    background-image: url('./Pictures/SnowyForest.jpg');
+    background-size: cover; /* Ensures the image covers the full width */
+    background-position: top; /* Aligns the image to the top */
+    background-repeat: no-repeat;
     display: flex;
     height: 175px;
     align-items: center;
@@ -7,19 +10,19 @@
 }
 
 .title {
-    color: #9BA694;
+    color: #D2F2FD;
     /* font-size: 70px; */
     font-size: 4vw;
-    text-shadow: 5px 2px 5px black;
+    text-shadow: 2px 2px 5px black;
 }
 
 .home-container {
     height:100vh;
-    background-color: #F5F1E3;
+    background-color: #DAF4FD;
 }
 
 .name-container {
-    background-color: #F5F1E3;
+    background-color: #DAF4FD;
 }
 
 .unordered-list {
@@ -44,7 +47,7 @@
     width: auto;
     overflow: hidden;
     cursor: pointer;
-    background-color: #274235;
+    background-color: #1A4568;
     border-bottom-right-radius: 30px;
     border-top-left-radius: 30px;
     display: flex;
@@ -58,7 +61,7 @@
     cursor: pointer;
     font-size: 35px;
     font-weight:900;
-    color:#F5F1E3;
+    color:#DAF4FD;
     display: inline-block;
     /* text-transform: uppercase; */
     font-weight: bold;
@@ -79,11 +82,11 @@
 
 .list-item:hover {
     .name-decoration {
-        color: transparent;
-        background-position: right;
+        color: white;
+        /* background-position: right;
         background: url('./Pictures/Glitter.jpeg') no-repeat center;
         background-size: cover;
         -webkit-background-clip: text;
-        background-clip: text;
+        background-clip: text; */
     }
 }

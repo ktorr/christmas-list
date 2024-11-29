@@ -16,7 +16,7 @@ function Header() {
 
     return (
         <div className="header-container">
-            <Button onClick={handleHomeClick} variant="outlined" className="header-button" startIcon={<HomeIcon />} sx={{ borderColor: '#274235', backgroundColor: '#F5F1E3', color: '#274235', borderWidth: '2px', '&:hover': { backgroundColor: '#274235', color: '#F5F1E3' } }}>
+            <Button onClick={handleHomeClick} variant="outlined" className="header-button" startIcon={<HomeIcon />} sx={{ borderColor: '#1A4568', backgroundColor: '#DAF4FD', color: '#1A4568', borderWidth: '2px', '&:hover': { backgroundColor: '#1A4568', color: '#DAF4FD' } }}>
                 Home
             </Button>
             <p className="header-text">SHOP FOR:</p>

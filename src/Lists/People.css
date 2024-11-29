@@ -1,19 +1,19 @@
 .banner {
-    background-image: url('../Pictures/ChristmasTree.jpg');
+    background-image: url('../Pictures/SnowyForest.jpg');
     display: flex;
-    height: 175px;
+    height: 150px; /*175px*/
     align-items: center;
     justify-content: center;
 }
 
 .title {
-    color: #9BA694;
+    color: #D2F2FD;
     font-size: 70px;
-    text-shadow: 5px 2px 5px black;
+    text-shadow: 2px 2px 5px black;
 }
 
 .body {
-    background-color: #F5F1E3;
+    background-color: #DAF4FD;
     height: 100vh;
 }
 
@@ -21,7 +21,7 @@
     display: flex;
     justify-content: space-between; /* Adjusts spacing between the list sections */
     gap: 20px; /* Optional: Adds space between the two sections */
-    background-color: #F5F1E3;
+    background-color: #DAF4FD;
 }
 
 @media (max-width: 768px) {
@@ -43,7 +43,7 @@
 }
 
 h2 {
-    color: #274235;
+    color: #1A4568;
     padding-bottom: none;
     font-size: 40px;
 }
@@ -60,7 +60,7 @@ h2 {
 .unpurchased-list {
     list-style-type: none;
     padding-left: 0;
-    color: #274235;
+    color: #1A4568;
     font-size: larger;
 }
 
@@ -82,18 +82,18 @@ h2 {
 .purchased-list {
     list-style-type: none;
     padding-left: 0;
-    color: #274235;
+    color: #1A4568;
     font-size: larger;
 }
 
 a {
-    color: #274235;
+    color: #1A4568;
 }
 
 a:visited {
-    color: #556B2F;
+    color: #1A4568;
 }
 
 a:hover {
-    color: #8B0000;
+    color: #3B6D8F;
 }

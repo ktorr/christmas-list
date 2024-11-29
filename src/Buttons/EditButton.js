@@ -44,12 +44,12 @@ function EditButton({item, onSave}) {
                         },
                     ],
                 }}>
-                <IconButton className="edit-button" onClick={handleEditOpen} size="medium" sx={{color:'#274235'}}>
+                <IconButton className="edit-button" onClick={handleEditOpen} size="medium" sx={{color:'#1A4568'}}>
                     <EditIcon />
                 </IconButton>
             </Tooltip>
             <Dialog open={editOpen} onClose={handleEditClose}>
-                <DialogTitle sx={{color: '#274235'}}>Edit Item</DialogTitle>
+                <DialogTitle sx={{color: '#1A4568'}}>Edit Item</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
@@ -62,13 +62,13 @@ function EditButton({item, onSave}) {
                         onChange={(e) => setName(e.target.value)}
                         sx={{
                             '& .MuiInput-underline:hover:before': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInput-underline:after': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInputLabel-root.Mui-focused': {
-                                color: '#274235',
+                                color: '#1A4568',
                             }
                         }}
                     />
@@ -82,13 +82,13 @@ function EditButton({item, onSave}) {
                         onChange={(e) => setLink(e.target.value)}
                         sx={{
                             '& .MuiInput-underline:hover:before': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInput-underline:after': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInputLabel-root.Mui-focused': {
-                                color: '#274235',
+                                color: '#1A4568',
                             }
                         }}
                     />
@@ -102,21 +102,21 @@ function EditButton({item, onSave}) {
                         onChange={(e) => setOrder(Number(e.target.value))} // Convert value to a number
                         sx={{
                             '& .MuiInput-underline:hover:before': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInput-underline:after': {
-                                borderBottomColor: '#274235',
+                                borderBottomColor: '#1A4568',
                             },
                             '& .MuiInputLabel-root.Mui-focused': {
-                                color: '#274235',
+                                color: '#1A4568',
                             },
                             width: '12.5%'
                         }}
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleEditClose} sx={{color: '#8B0000'}}>Cancel</Button>
-                    <Button onClick={handleSave} sx={{backgroundColor: '#274235', color: 'white'}}>Save</Button>
+                    <Button onClick={handleEditClose} sx={{color: '#C44D58'}}>Cancel</Button>
+                    <Button onClick={handleSave} sx={{backgroundColor: '#1A4568', color: 'white'}}>Save</Button>
                 </DialogActions>
             </Dialog>
         </div>

@@ -37,7 +37,7 @@ function MoveButton({item, onMove}) {
                         },
                     ],
                 }}>
-                <IconButton className="move-button" onClick={handleMove} size="medium" sx={{color:'#274235'}}>
+                <IconButton className="move-button" onClick={handleMove} size="medium" sx={{color:'#1A4568'}}>
                 {isMobileView ? (
                         <MoveIcon sx={{transform:'rotate(90deg) scaleY(-1)'}}/> // Mobile
                     ) : (
