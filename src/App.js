@@ -16,6 +16,9 @@ import Kennedy from './Lists/Kennedy';
 import Evelyn from './Lists/Evelyn';
 import Matthew from './Lists/Matthew';
 import Nicolas from './Lists/Nicolas';
+import Bill from './Lists/Bill';
+import Paul from './Lists/Paul';
+import Max from './Lists/Max';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 
@@ -42,6 +45,9 @@ function App() {
                   <Route path="/Evelyn" element={<Evelyn />} />
                   <Route path="/Matthew" element={<Matthew />} />
                   <Route path="/Nicolas" element={<Nicolas />} />
+                  <Route path="/Bill" element={<Bill />} />
+                  <Route path="/Paul" element={<Paul />} />
+                  <Route path="/Max" element={<Max />} />
               </Routes>
           </main>
       </div>

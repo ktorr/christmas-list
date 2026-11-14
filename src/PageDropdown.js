@@ -33,6 +33,9 @@ function PageDropdown({ selectedPage, setSelectedPage }) {
             <option value="/Evelyn">Evelyn</option>
             <option value="/Matthew">Matthew</option>
             <option value="/Nicolas">Nicolas</option>
+            <option value="/Bill">Bill</option>
+            <option value="/Paul">Paul</option>
+            <option value="/Max">Max</option>
         </select>
     );
 }

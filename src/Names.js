@@ -18,7 +18,10 @@ function ImageGrid() {
         'Lynda',
         'Evelyn',
         'Matthew',
-        'Nicolas'
+        'Nicolas',
+        'Bill',
+        'Paul',
+        'Max'
     ];
 
     const paths = [
@@ -36,7 +39,10 @@ function ImageGrid() {
         '/Lynda',
         '/Evelyn',
         '/Matthew',
-        '/Nicolas'
+        '/Nicolas',
+        '/Bill',
+        '/Paul',
+        '/Max'
     ];
 
     const navigate = useNavigate();
