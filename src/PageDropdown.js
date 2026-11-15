@@ -18,24 +18,24 @@ function PageDropdown({ selectedPage, setSelectedPage }) {
     return (
         <select className="dropdown" onChange={handleChange} value={selectedPage}>
             <option value="/">Select Name</option>
-            <option value="/Abu">Abu</option>
             <option value="/Aba">Aba</option>
-            <option value="/John">John</option>
-            <option value="/Grace">Grace</option>
-            <option value="/Madison">Madison</option>
-            <option value="/Kennedy">Kennedy</option>
-            <option value="/Ron">Ron</option>
-            <option value="/Maria">Maria</option>
-            <option value="/Emmie">Emmie</option>
+            <option value="/Abu">Abu</option>
             <option value="/Anthony">Anthony</option>
-            <option value="/Mateo">Mateo</option>
-            <option value="/Lynda">Lynda</option>
-            <option value="/Evelyn">Evelyn</option>
-            <option value="/Matthew">Matthew</option>
-            <option value="/Nicolas">Nicolas</option>
             <option value="/Bill">Bill</option>
-            <option value="/Paul">Paul</option>
+            <option value="/Emmie">Emmie</option>
+            <option value="/Evelyn">Evelyn</option>
+            <option value="/Grace">Grace</option>
+            <option value="/John">John</option>
+            <option value="/Kennedy">Kennedy</option>
+            <option value="/Lynda">Lynda</option>
+            <option value="/Madison">Madison</option>
+            <option value="/Maria">Maria</option>
+            <option value="/Mateo">Mateo</option>
+            <option value="/Matthew">Matthew</option>
             <option value="/Max">Max</option>
+            <option value="/Nicolas">Nicolas</option>
+            <option value="/Paul">Paul</option>
+            <option value="/Ron">Ron</option>
         </select>
     );
 }

@@ -7,9 +7,9 @@ import Button from '@mui/material/Button';
 import { useUser } from './UserContext';
 
 const NAMES = [
-    'Abu', 'Aba', 'Maria', 'Ron', 'Grace', 'John', 'Lynda', 'Mateo',
-    'Emmie', 'Anthony', 'Madison', 'Kennedy', 'Evelyn', 'Matthew',
-    'Nicolas', 'Bill', 'Paul', 'Max'
+    'Aba', 'Abu', 'Anthony', 'Bill', 'Emmie', 'Evelyn', 'Grace', 'John',
+    'Kennedy', 'Lynda', 'Madison', 'Maria', 'Mateo', 'Matthew', 'Max',
+    'Nicolas', 'Paul', 'Ron'
 ];
 
 function UserPicker() {
