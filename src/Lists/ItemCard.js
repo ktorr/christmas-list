@@ -127,7 +127,7 @@ function ItemCard({
                     <IconButton
                         size="small"
                         onClick={() => onEditItem(item)}
-                        sx={{ backgroundColor: 'rgba(255,255,255,0.9)', color: '#1A4568' }}
+                        sx={{ backgroundColor: 'rgba(255,255,255,0.9)', color: 'var(--theme-primary)' }}
                     >
                         <EditIcon fontSize="small" />
                     </IconButton>
@@ -151,7 +151,7 @@ function ItemCard({
                     }}
                     sx={{
                         position: 'absolute', top: 6, right: 6, zIndex: 2,
-                        backgroundColor: 'rgba(255,255,255,0.85)', color: '#1A4568',
+                        backgroundColor: 'rgba(255,255,255,0.85)', color: 'var(--theme-primary)',
                     }}
                 >
                     <OpenInNewIcon fontSize="small" />
@@ -179,7 +179,7 @@ function ItemCard({
 
             {/* Text content */}
             <CardContent sx={{ flexGrow: 1, pb: '12px !important' }}>
-                <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#1A4568', lineHeight: 1.3 }}>
+                <Typography variant="subtitle1" sx={{ fontWeight: 700, color: 'var(--theme-primary)', lineHeight: 1.3 }}>
                     {item.name}
                 </Typography>
                 {item.price && (
@@ -207,7 +207,7 @@ function ItemCard({
                                 setIsSelected(false);
                                 window.open(item.link, '_blank', 'noopener,noreferrer');
                             }}
-                            sx={{ ...btnStyles, backgroundColor: '#1A4568', '&:hover': { backgroundColor: '#0d2d45' } }}
+                            sx={{ ...btnStyles, backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                         >
                             Visit
                         </Button>

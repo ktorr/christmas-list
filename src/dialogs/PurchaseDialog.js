@@ -9,14 +9,14 @@ import Button from '@mui/material/Button';
 function PurchaseDialog({ open, item, onConfirm, onClose }) {
     return (
         <Dialog open={open} onClose={onClose}>
-            <DialogTitle sx={{ color: '#1A4568', fontWeight: 700 }}>Confirm Purchase</DialogTitle>
+            <DialogTitle sx={{ color: 'var(--theme-primary)', fontWeight: 700 }}>Confirm Purchase</DialogTitle>
             <DialogContent>
                 <DialogContentText>
                     Have you purchased <strong>{item?.name}</strong>?
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose} sx={{ color: '#1A4568' }}>Cancel</Button>
+                <Button onClick={onClose} sx={{ color: 'var(--theme-primary)' }}>Cancel</Button>
                 <Button
                     onClick={onConfirm}
                     variant="contained"

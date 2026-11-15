@@ -20,7 +20,7 @@ function UserPicker() {
 
     return (
         <Dialog open={open} disableEscapeKeyDown={!isSwitching}>
-            <DialogTitle sx={{ color: '#1A4568', fontWeight: 700 }}>
+            <DialogTitle sx={{ color: 'var(--theme-primary)', fontWeight: 700 }}>
                 {isSwitching ? 'Change Identity' : 'Who are you?'}
             </DialogTitle>
             <DialogContent>
@@ -31,10 +31,10 @@ function UserPicker() {
                         width: '100%',
                         padding: '8px',
                         fontSize: '1rem',
-                        borderColor: '#1A4568',
+                        borderColor: 'var(--theme-primary)',
                         borderWidth: '2px',
                         borderRadius: '4px',
-                        color: '#1A4568',
+                        color: 'var(--theme-primary)',
                         cursor: 'pointer',
                     }}
                 >
@@ -51,7 +51,7 @@ function UserPicker() {
                 )}
                 <Button
                     onClick={() => updateUser(selected)}
-                    sx={{ backgroundColor: '#1A4568', color: 'white', '&:hover': { backgroundColor: '#0d2d45' } }}
+                    sx={{ backgroundColor: 'var(--theme-primary)', color: 'white', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                 >
                     {isSwitching ? 'Confirm' : "Let's go!"}
                 </Button>

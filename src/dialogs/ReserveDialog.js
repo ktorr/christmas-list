@@ -21,7 +21,7 @@ function ReserveDialog({ open, item, currentUser, onConfirm, onClose }) {
 
     return (
         <Dialog open={open} onClose={onClose}>
-            <DialogTitle sx={{ color: '#1A4568', fontWeight: 700 }}>Reserve Item</DialogTitle>
+            <DialogTitle sx={{ color: 'var(--theme-primary)', fontWeight: 700 }}>Reserve Item</DialogTitle>
             <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <DialogContentText>
                     Reserve <strong>{item?.name}</strong> for:
@@ -31,8 +31,8 @@ function ReserveDialog({ open, item, currentUser, onConfirm, onClose }) {
                     onChange={e => setSelectedName(e.target.value)}
                     style={{
                         width: '100%', padding: '8px', fontSize: '1rem',
-                        borderColor: '#1A4568', borderWidth: '2px',
-                        borderRadius: '4px', color: '#1A4568', cursor: 'pointer',
+                        borderColor: 'var(--theme-primary)', borderWidth: '2px',
+                        borderRadius: '4px', color: 'var(--theme-primary)', cursor: 'pointer',
                     }}
                 >
                     {NAMES.map(name => (
@@ -45,7 +45,7 @@ function ReserveDialog({ open, item, currentUser, onConfirm, onClose }) {
                 <Button
                     onClick={() => onConfirm(selectedName)}
                     variant="contained"
-                    sx={{ backgroundColor: '#1A4568', '&:hover': { backgroundColor: '#0d2d45' } }}
+                    sx={{ backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                 >
                     Reserve
                 </Button>

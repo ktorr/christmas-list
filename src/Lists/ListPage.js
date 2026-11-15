@@ -126,7 +126,7 @@ function ListPage({ name, listId }) {
                             variant="contained"
                             startIcon={<SaveIcon />}
                             onClick={() => setIsEditMode(false)}
-                            sx={{ backgroundColor: '#1A4568', '&:hover': { backgroundColor: '#0d2d45' } }}
+                            sx={{ backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                         >
                             Save
                         </Button>
@@ -136,7 +136,7 @@ function ListPage({ name, listId }) {
                                 variant="outlined"
                                 startIcon={<EditIcon />}
                                 onClick={() => setIsEditMode(true)}
-                                sx={{ color: '#1A4568', borderColor: '#1A4568' }}
+                                sx={{ color: 'var(--theme-primary)', borderColor: 'var(--theme-primary)' }}
                             >
                                 Edit
                             </Button>
@@ -144,7 +144,7 @@ function ListPage({ name, listId }) {
                                 variant="contained"
                                 startIcon={<AddIcon />}
                                 onClick={() => setAddDialogOpen(true)}
-                                sx={{ backgroundColor: '#1A4568', '&:hover': { backgroundColor: '#0d2d45' } }}
+                                sx={{ backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                             >
                                 Add Item
                             </Button>
@@ -195,12 +195,12 @@ function ListPage({ name, listId }) {
             />
 
             <Dialog open={deleteDialogOpen} onClose={() => setDeleteDialogOpen(false)}>
-                <DialogTitle sx={{ color: '#1A4568', fontWeight: 700 }}>Delete Item</DialogTitle>
+                <DialogTitle sx={{ color: 'var(--theme-primary)', fontWeight: 700 }}>Delete Item</DialogTitle>
                 <DialogContent>
                     <DialogContentText>Are you sure you want to delete this item?</DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setDeleteDialogOpen(false)} sx={{ color: '#1A4568' }}>Cancel</Button>
+                    <Button onClick={() => setDeleteDialogOpen(false)} sx={{ color: 'var(--theme-primary)' }}>Cancel</Button>
                     <Button
                         onClick={handleDeleteConfirm}
                         variant="contained"

@@ -8,8 +8,12 @@
     background-position: center;
 }
 
+[data-theme="christmas-forest"] .banner {
+    background-image: url('../Pictures/ChristmasTree.jpg');
+}
+
 .title {
-    color: #D2F2FD;
+    color: var(--theme-title-text, #D2F2FD);
     font-size: 70px;
     text-shadow: 2px 2px 5px black;
 }
@@ -21,7 +25,7 @@
 }
 
 .list-page-body {
-    background-color: #DAF4FD;
+    background-color: var(--theme-bg, #DAF4FD);
     min-height: 100%;
 }
 
@@ -33,13 +37,13 @@
 }
 
 a {
-    color: #1A4568;
+    color: var(--theme-primary, #1A4568);
 }
 
 a:visited {
-    color: #1A4568;
+    color: var(--theme-primary, #1A4568);
 }
 
 a:hover {
-    color: #3B6D8F;
+    color: var(--theme-link-hover, #3B6D8F);
 }

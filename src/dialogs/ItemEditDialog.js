@@ -28,7 +28,7 @@ function ItemEditDialog({ open, item, onSave, onClose }) {
 
     return (
         <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
-            <DialogTitle sx={{ color: '#1A4568', fontWeight: 700 }}>Edit Item</DialogTitle>
+            <DialogTitle sx={{ color: 'var(--theme-primary)', fontWeight: 700 }}>Edit Item</DialogTitle>
             <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, pt: '16px !important' }}>
                 <TextField
                     label="Item Name"
@@ -64,7 +64,7 @@ function ItemEditDialog({ open, item, onSave, onClose }) {
                     onClick={handleSave}
                     disabled={!name.trim()}
                     variant="contained"
-                    sx={{ backgroundColor: '#1A4568', '&:hover': { backgroundColor: '#0d2d45' } }}
+                    sx={{ backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                 >
                     Save
                 </Button>
