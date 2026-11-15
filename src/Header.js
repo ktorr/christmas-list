@@ -4,13 +4,15 @@ import Button from '@mui/material/Button';
 import HomeIcon from '@mui/icons-material/Home';
 import PageDropdown from './PageDropdown';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from './UserContext';
 
 function Header() {
     const navigate = useNavigate();
     const [selectedPage, setSelectedPage] = useState('/');
+    const { currentUser, clearUser } = useUser();
 
     const handleHomeClick = () => {
-        setSelectedPage('/'); // Reset to home
+        setSelectedPage('/');
         navigate('/');
     };
 
@@ -21,8 +23,16 @@ function Header() {
             </Button>
             <p className="header-text">SHOP FOR:</p>
             <PageDropdown selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+            {currentUser && (
+                <>
+                    <p className="header-text" style={{ marginLeft: '15px' }}>👤 {currentUser}</p>
+                    <Button onClick={clearUser} size="small" sx={{ color: '#1A4568', fontSize: '0.75rem', textTransform: 'none', minWidth: 'auto', padding: '2px 6px', marginLeft: '4px' }}>
+                        Change
+                    </Button>
+                </>
+            )}
         </div>
     );
-  }
-  
-  export default Header;
+}
+
+export default Header;

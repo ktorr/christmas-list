@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Home from './Home';
+import { UserProvider } from './UserContext';
+import UserPicker from './UserPicker';
 import Abu from './Lists/Abu';
 import Aba from './Lists/Aba';
 import Maria from './Lists/Maria';
@@ -25,8 +27,10 @@ import Header from './Header';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header/>
+      <UserProvider>
+        <div className="App">
+          <Header/>
+          <UserPicker/>
           <main>
               <Routes>
                   <Route path="/" element={<Home />} />
@@ -50,7 +54,8 @@ function App() {
                   <Route path="/Max" element={<Max />} />
               </Routes>
           </main>
-      </div>
+        </div>
+      </UserProvider>
     </Router>
   );
 }
