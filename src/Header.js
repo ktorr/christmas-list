@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './Header.css';
 import Button from '@mui/material/Button';
 import HomeIcon from '@mui/icons-material/Home';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import PageDropdown from './PageDropdown';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './UserContext';
@@ -10,11 +13,16 @@ function Header() {
     const navigate = useNavigate();
     const [selectedPage, setSelectedPage] = useState('/');
     const { currentUser, clearUser } = useUser();
+    const [menuAnchor, setMenuAnchor] = useState(null);
 
     const handleHomeClick = () => {
         setSelectedPage('/');
         navigate('/');
     };
+
+    const handleProfileClick = (e) => setMenuAnchor(e.currentTarget);
+    const handleMenuClose = () => setMenuAnchor(null);
+    const handleChangeIdentity = () => { handleMenuClose(); clearUser(); };
 
     return (
         <div className="header-container">
@@ -25,10 +33,18 @@ function Header() {
             <PageDropdown selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
             {currentUser && (
                 <>
-                    <p className="header-text" style={{ marginLeft: '15px' }}>👤 {currentUser}</p>
-                    <Button onClick={clearUser} size="small" sx={{ color: '#1A4568', fontSize: '0.75rem', textTransform: 'none', minWidth: 'auto', padding: '2px 6px', marginLeft: '4px' }}>
-                        Change
+                    <Button
+                        onClick={handleProfileClick}
+                        startIcon={<AccountCircleIcon />}
+                        sx={{ marginLeft: 'auto', color: '#1A4568', textTransform: 'none', fontWeight: 600, fontSize: '0.875rem' }}
+                    >
+                        {currentUser}
                     </Button>
+                    <Menu anchorEl={menuAnchor} open={Boolean(menuAnchor)} onClose={handleMenuClose}>
+                        <MenuItem onClick={handleChangeIdentity} sx={{ color: '#1A4568' }}>
+                            Change Identity
+                        </MenuItem>
+                    </Menu>
                 </>
             )}
         </div>
