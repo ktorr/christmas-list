@@ -12,7 +12,7 @@ import { useUser } from './UserContext';
 function Header() {
     const navigate = useNavigate();
     const [selectedPage, setSelectedPage] = useState('/');
-    const { currentUser, clearUser } = useUser();
+    const { currentUser, startSwitch } = useUser();
     const [menuAnchor, setMenuAnchor] = useState(null);
 
     const handleHomeClick = () => {
@@ -22,7 +22,7 @@ function Header() {
 
     const handleProfileClick = (e) => setMenuAnchor(e.currentTarget);
     const handleMenuClose = () => setMenuAnchor(null);
-    const handleChangeIdentity = () => { handleMenuClose(); clearUser(); };
+    const handleChangeIdentity = () => { handleMenuClose(); startSwitch(); };
 
     return (
         <div className="header-container">

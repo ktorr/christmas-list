@@ -13,12 +13,16 @@ const NAMES = [
 ];
 
 function UserPicker() {
-    const { currentUser, updateUser } = useUser();
+    const { currentUser, updateUser, switchingIdentity, cancelSwitch } = useUser();
     const [selected, setSelected] = useState(NAMES[0]);
+    const isSwitching = switchingIdentity && !!currentUser;
+    const open = !currentUser || switchingIdentity;
 
     return (
-        <Dialog open={!currentUser} disableEscapeKeyDown>
-            <DialogTitle sx={{ color: '#1A4568', fontWeight: 700 }}>Who are you?</DialogTitle>
+        <Dialog open={open} disableEscapeKeyDown={!isSwitching}>
+            <DialogTitle sx={{ color: '#1A4568', fontWeight: 700 }}>
+                {isSwitching ? 'Change Identity' : 'Who are you?'}
+            </DialogTitle>
             <DialogContent>
                 <select
                     value={selected}
@@ -40,11 +44,16 @@ function UserPicker() {
                 </select>
             </DialogContent>
             <DialogActions>
+                {isSwitching && (
+                    <Button onClick={cancelSwitch} sx={{ color: '#C44D58' }}>
+                        Cancel
+                    </Button>
+                )}
                 <Button
                     onClick={() => updateUser(selected)}
                     sx={{ backgroundColor: '#1A4568', color: 'white', '&:hover': { backgroundColor: '#0d2d45' } }}
                 >
-                    Let's go!
+                    {isSwitching ? 'Confirm' : "Let's go!"}
                 </Button>
             </DialogActions>
         </Dialog>
