@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import useFirestore from '../useFirestore';
 import Tooltip from '@mui/material/Tooltip';
 
 function DeleteButton({item, onDelete}) {
