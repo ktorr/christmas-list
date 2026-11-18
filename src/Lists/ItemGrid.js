@@ -36,6 +36,7 @@ function ItemGrid({
     onReserve,
     onUnreserve,
     onPurchased,
+    onUnpurchased,
     onEditItem,
     onDeleteItem,
     onReorderComplete,
@@ -62,6 +63,7 @@ function ItemGrid({
         onReserve,
         onUnreserve,
         onPurchased,
+        onUnpurchased,
         onEditItem,
         onDeleteItem,
     };

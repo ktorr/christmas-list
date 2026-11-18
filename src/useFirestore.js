@@ -64,9 +64,18 @@ const useFirestore = (listId) => {
     const markPurchased = async (itemId) => {
         try {
             const itemRef = doc(db, 'lists', listId, 'listItems', itemId);
-            await updateDoc(itemRef, { purchased: true, reserved: false, reservedBy: null });
+            await updateDoc(itemRef, { purchased: true });
         } catch (error) {
             console.error('Error marking item purchased: ', error);
+        }
+    };
+
+    const unmarkPurchased = async (itemId) => {
+        try {
+            const itemRef = doc(db, 'lists', listId, 'listItems', itemId);
+            await updateDoc(itemRef, { purchased: false });
+        } catch (error) {
+            console.error('Error unmarking item purchased: ', error);
         }
     };
 
@@ -83,7 +92,7 @@ const useFirestore = (listId) => {
         }
     };
 
-    return { items, addItem, editItem, deleteItem, markPurchased, reorderItems };
+    return { items, addItem, editItem, deleteItem, markPurchased, unmarkPurchased, reorderItems };
 };
 
 export default useFirestore;

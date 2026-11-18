@@ -25,7 +25,7 @@ import SecretSantaDialog from '../dialogs/SecretSantaDialog';
 function ListPage({ name, listId }) {
     const { currentUser } = useContext(UserContext);
     const isOwnList = currentUser === name;
-    const { items, addItem, editItem, deleteItem, markPurchased, reorderItems } = useFirestore(listId);
+    const { items, addItem, editItem, deleteItem, markPurchased, unmarkPurchased, reorderItems } = useFirestore(listId);
     const { reserveItem, unreserveItem } = useReservation(listId);
 
     const [isEditMode, setIsEditMode] = useState(false);
@@ -112,6 +112,10 @@ function ListPage({ name, listId }) {
         setPurchaseTargetItem(null);
     };
 
+    const handleUnpurchased = (itemId) => {
+        unmarkPurchased(itemId);
+    };
+
     const handleReorderComplete = (reorderedIds) => {
         reorderItems(reorderedIds);
     };
@@ -172,6 +176,7 @@ function ListPage({ name, listId }) {
                 onReserve={handleReserve}
                 onUnreserve={handleUnreserve}
                 onPurchased={handlePurchased}
+                onUnpurchased={handleUnpurchased}
                 onEditItem={handleEditItem}
                 onDeleteItem={handleDeleteItem}
                 onReorderComplete={handleReorderComplete}

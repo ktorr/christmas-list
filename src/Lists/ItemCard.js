@@ -21,6 +21,7 @@ function ItemCard({
     onReserve,
     onUnreserve,
     onPurchased,
+    onUnpurchased,
     onEditItem,
     onDeleteItem,
     dragHandleListeners,
@@ -31,7 +32,8 @@ function ItemCard({
     const cardRef = useRef(null);
 
     const isPurchased = !isOwnList && !!item.purchased;
-    const isReserved = !isOwnList && !!item.reserved;
+    // Hide reserved badge on purchased items — it'll reappear when un-purchased
+    const isReserved = !isOwnList && !!item.reserved && !item.purchased;
     const isReservedByMe = isReserved && item.reservedBy === currentUser;
     const isReservedByOther = isReserved && item.reservedBy !== currentUser;
 
@@ -48,11 +50,12 @@ function ItemCard({
     }, [isSelected]);
 
     const handleCardClick = () => {
-        if (isEditMode || isPurchased) return;
+        if (isEditMode) return;
+        if (isOwnList) return;
         setIsSelected(prev => !prev);
     };
 
-    const showOverlay = isSelected && !isEditMode && !isPurchased;
+    const showOverlay = isSelected && !isEditMode && !isOwnList;
 
     const btnStyles = {
         width: '75%',
@@ -71,9 +74,9 @@ function ItemCard({
                 flexDirection: 'column',
                 opacity: isDragging ? 0.4 : isPurchased ? 0.5 : 1,
                 filter: isPurchased ? 'grayscale(60%)' : 'none',
-                cursor: isEditMode ? 'default' : isPurchased ? 'default' : 'pointer',
+                cursor: isEditMode || isOwnList ? 'default' : 'pointer',
                 transition: 'box-shadow 0.2s, opacity 0.2s',
-                '&:hover': (!isEditMode && !isPurchased) ? { boxShadow: 6 } : {},
+                '&:hover': (!isEditMode && !isOwnList) ? { boxShadow: 6 } : {},
                 userSelect: 'none',
             }}
         >
@@ -190,7 +193,7 @@ function ItemCard({
             </CardContent>
 
             {/* Click overlay for other's list */}
-            {showOverlay && !isOwnList && (
+            {showOverlay && (
                 <Box sx={{
                     position: 'absolute', inset: 0,
                     backgroundColor: 'rgba(0,0,0,0.65)',
@@ -198,49 +201,64 @@ function ItemCard({
                     alignItems: 'center', justifyContent: 'center',
                     gap: 1.5, borderRadius: 'inherit', zIndex: 3,
                 }}>
-                    {item.link && (
-                        <Button
-                            variant="contained"
-                            startIcon={<OpenInNewIcon />}
-                            onClick={e => {
-                                e.stopPropagation();
-                                setIsSelected(false);
-                                window.open(item.link, '_blank', 'noopener,noreferrer');
-                            }}
-                            sx={{ ...btnStyles, backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
-                        >
-                            Visit
-                        </Button>
-                    )}
-                    {/* Reserve / Un-reserve — not shown if reserved by someone else */}
-                    {!isReservedByOther && (
+                    {isPurchased ? (
                         <Button
                             variant="contained"
                             onClick={e => {
                                 e.stopPropagation();
                                 setIsSelected(false);
-                                isReservedByMe ? onUnreserve(item.id) : onReserve(item);
+                                onUnpurchased(item.id);
                             }}
-                            sx={{
-                                ...btnStyles,
-                                backgroundColor: isReservedByMe ? '#757575' : '#D97706',
-                                '&:hover': { backgroundColor: isReservedByMe ? '#616161' : '#B45309' },
-                            }}
+                            sx={{ ...btnStyles, backgroundColor: '#757575', '&:hover': { backgroundColor: '#616161' } }}
                         >
-                            {isReservedByMe ? 'Un-reserve' : 'Reserve'}
+                            Un-purchase
                         </Button>
+                    ) : (
+                        <>
+                            {item.link && (
+                                <Button
+                                    variant="contained"
+                                    startIcon={<OpenInNewIcon />}
+                                    onClick={e => {
+                                        e.stopPropagation();
+                                        setIsSelected(false);
+                                        window.open(item.link, '_blank', 'noopener,noreferrer');
+                                    }}
+                                    sx={{ ...btnStyles, backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
+                                >
+                                    Visit
+                                </Button>
+                            )}
+                            {!isReservedByOther && (
+                                <Button
+                                    variant="contained"
+                                    onClick={e => {
+                                        e.stopPropagation();
+                                        setIsSelected(false);
+                                        isReservedByMe ? onUnreserve(item.id) : onReserve(item);
+                                    }}
+                                    sx={{
+                                        ...btnStyles,
+                                        backgroundColor: isReservedByMe ? '#757575' : '#D97706',
+                                        '&:hover': { backgroundColor: isReservedByMe ? '#616161' : '#B45309' },
+                                    }}
+                                >
+                                    {isReservedByMe ? 'Un-reserve' : 'Reserve'}
+                                </Button>
+                            )}
+                            <Button
+                                variant="contained"
+                                onClick={e => {
+                                    e.stopPropagation();
+                                    setIsSelected(false);
+                                    onPurchased(item);
+                                }}
+                                sx={{ ...btnStyles, backgroundColor: '#388e3c', '&:hover': { backgroundColor: '#2e7d32' } }}
+                            >
+                                Purchased
+                            </Button>
+                        </>
                     )}
-                    <Button
-                        variant="contained"
-                        onClick={e => {
-                            e.stopPropagation();
-                            setIsSelected(false);
-                            onPurchased(item);
-                        }}
-                        sx={{ ...btnStyles, backgroundColor: '#388e3c', '&:hover': { backgroundColor: '#2e7d32' } }}
-                    >
-                        Purchased
-                    </Button>
                 </Box>
             )}
         </Card>
