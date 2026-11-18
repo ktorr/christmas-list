@@ -117,22 +117,25 @@
 }
 
 @media (max-width: 600px) {
+    .scroll-wrapper {
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 24px 16px 28px;
+    }
+
     .scroll {
-        padding: 40px 30px 50px;
+        padding: 36px 24px 44px;
     }
 
     .scroll-title {
         font-size: 2.6rem;
-        color: var(--theme-scroll-accent, #8B0000);
     }
 
     .family-header {
         font-size: 1.9rem;
-        color: var(--theme-scroll-accent, #8B0000);
     }
 
     .family-name {
         font-size: 1.4rem;
-        color: var(--theme-primary, #1A4568);
     }
 }

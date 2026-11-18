@@ -19,8 +19,32 @@
 }
 
 @media (max-width: 480px) {
+    .banner {
+        height: 120px;
+    }
+
     .title {
-        font-size: 48px;
+        font-size: 38px;
+    }
+
+    .list-toolbar {
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .btn-label {
+        display: none;
+    }
+
+    .list-toolbar .MuiButton-root {
+        min-width: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .list-toolbar .MuiButton-root .MuiButton-startIcon {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 

@@ -6,7 +6,6 @@
 }
 
 .header-button {
-    margin-right: 16px;
 }
 
 .header-text {
@@ -30,6 +29,16 @@
 
 select {
     outline: none;
+}
+
+@media (max-width: 480px) {
+    .header-text {
+        display: none;
+    }
+
+    .header-button {
+        margin-right: 16px;
+    }
 }
 
 .dropdown option:hover {

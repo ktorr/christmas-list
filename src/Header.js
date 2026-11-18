@@ -42,6 +42,8 @@ function Header() {
                     backgroundColor: 'var(--theme-bg)',
                     color: 'var(--theme-primary)',
                     borderWidth: '2px',
+                    height: '36px',
+                    marginRight: '20px',
                     '&:hover': { backgroundColor: 'var(--theme-primary)', color: 'var(--theme-bg)' },
                 }}
             >

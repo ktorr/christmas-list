@@ -133,7 +133,7 @@ function ListPage({ name, listId }) {
                     onClick={() => setSantaOpen(true)}
                     sx={{ color: 'var(--theme-primary)', borderColor: 'var(--theme-primary)' }}
                 >
-                    Secret Santa
+                    <span className="btn-label">Secret Santa</span>
                 </Button>
                 {isOwnList && (
                     isEditMode ? (
@@ -143,7 +143,7 @@ function ListPage({ name, listId }) {
                             onClick={() => setIsEditMode(false)}
                             sx={{ backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                         >
-                            Save
+                            <span className="btn-label">Save</span>
                         </Button>
                     ) : (
                         <>
@@ -153,7 +153,7 @@ function ListPage({ name, listId }) {
                                 onClick={() => setIsEditMode(true)}
                                 sx={{ color: 'var(--theme-primary)', borderColor: 'var(--theme-primary)' }}
                             >
-                                Edit
+                                <span className="btn-label">Edit</span>
                             </Button>
                             <Button
                                 variant="contained"
@@ -161,7 +161,7 @@ function ListPage({ name, listId }) {
                                 onClick={() => setAddDialogOpen(true)}
                                 sx={{ backgroundColor: 'var(--theme-primary)', '&:hover': { backgroundColor: 'var(--theme-primary-dark)' } }}
                             >
-                                Add Item
+                                <span className="btn-label">Add Item</span>
                             </Button>
                         </>
                     )
