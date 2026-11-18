@@ -1,99 +1,73 @@
 .banner {
     background-image: url('../Pictures/SnowyForest.jpg');
     display: flex;
-    height: 150px; /*175px*/
+    height: 150px;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+[data-theme="christmas-forest"] .banner {
+    background-image: url('../Pictures/ChristmasTree.jpg');
 }
 
 .title {
-    color: #D2F2FD;
+    color: var(--theme-title-text, #D2F2FD);
     font-size: 70px;
     text-shadow: 2px 2px 5px black;
 }
 
-.body {
-    background-color: #DAF4FD;
-    height: 100vh;
-}
+@media (max-width: 480px) {
+    .banner {
+        height: 120px;
+    }
 
-.list-container {
-    display: flex;
-    justify-content: space-between; /* Adjusts spacing between the list sections */
-    gap: 20px; /* Optional: Adds space between the two sections */
-    background-color: #DAF4FD;
-}
+    .title {
+        font-size: 38px;
+    }
 
-@media (max-width: 768px) {
-    .list-container {
-        flex-direction: column; /* Stack the sections vertically */
-        padding-right: 20px;
+    .list-toolbar {
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .btn-label {
+        display: none;
+    }
+
+    .list-toolbar .MuiButton-root {
+        min-width: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .list-toolbar .MuiButton-root .MuiButton-startIcon {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
-.list-section {
-    flex: 1; /* Makes each section take up equal space */
+.list-page-body {
+    background-color: var(--theme-bg, #DAF4FD);
+    min-height: 100%;
 }
 
-.list-header {
-    display: flex;
-    align-items: center; /* Aligns the h2 and the button vertically */
-    justify-content: center; /* Centers the h2 and button horizontally */
-    position: relative;
-}
-
-h2 {
-    color: #1A4568;
-    padding-bottom: none;
-    font-size: 40px;
-}
-
-.unpurchased-items{
+.list-toolbar {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    margin-left: 20px;
-    font-weight: 500;
-    text-align: left;
-}
-
-.unpurchased-list {
-    list-style-type: none;
-    padding-left: 0;
-    color: #1A4568;
-    font-size: larger;
-}
-
-.purchased-items{
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    margin-left: 50px;
-    font-weight: 500;
-    text-align: left;
-}
-
-@media (max-width: 768px) {
-    .purchased-items {
-        margin-left: 20px;
-    }
-}
-
-.purchased-list {
-    list-style-type: none;
-    padding-left: 0;
-    color: #1A4568;
-    font-size: larger;
+    gap: 12px;
+    padding: 16px 20px;
 }
 
 a {
-    color: #1A4568;
+    color: var(--theme-primary, #1A4568);
 }
 
 a:visited {
-    color: #1A4568;
+    color: var(--theme-primary, #1A4568);
 }
 
 a:hover {
-    color: #3B6D8F;
+    color: var(--theme-link-hover, #3B6D8F);
 }
