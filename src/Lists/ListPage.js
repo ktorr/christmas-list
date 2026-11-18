@@ -19,6 +19,8 @@ import Alert from '@mui/material/Alert';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import SaveIcon from '@mui/icons-material/Save';
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
+import SecretSantaDialog from '../dialogs/SecretSantaDialog';
 
 function ListPage({ name, listId }) {
     const { currentUser } = useContext(UserContext);
@@ -36,6 +38,7 @@ function ListPage({ name, listId }) {
     const [purchaseTargetItem, setPurchaseTargetItem] = useState(null);
     const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
     const [deleteTargetId, setDeleteTargetId] = useState(null);
+    const [santaOpen, setSantaOpen] = useState(false);
     const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'error' });
 
     const closeSnackbar = () => setSnackbar(s => ({ ...s, open: false }));
@@ -119,9 +122,17 @@ function ListPage({ name, listId }) {
                 <h1 className="title">{name}</h1>
             </div>
 
-            {isOwnList && (
-                <div className="list-toolbar">
-                    {isEditMode ? (
+            <div className="list-toolbar">
+                <Button
+                    variant="outlined"
+                    startIcon={<CardGiftcardIcon />}
+                    onClick={() => setSantaOpen(true)}
+                    sx={{ color: 'var(--theme-primary)', borderColor: 'var(--theme-primary)' }}
+                >
+                    Secret Santa
+                </Button>
+                {isOwnList && (
+                    isEditMode ? (
                         <Button
                             variant="contained"
                             startIcon={<SaveIcon />}
@@ -149,9 +160,9 @@ function ListPage({ name, listId }) {
                                 Add Item
                             </Button>
                         </>
-                    )}
-                </div>
-            )}
+                    )
+                )}
+            </div>
 
             <ItemGrid
                 items={items}
@@ -164,6 +175,14 @@ function ListPage({ name, listId }) {
                 onEditItem={handleEditItem}
                 onDeleteItem={handleDeleteItem}
                 onReorderComplete={handleReorderComplete}
+            />
+
+            <SecretSantaDialog
+                open={santaOpen}
+                name={name}
+                listId={listId}
+                isOwn={isOwnList}
+                onClose={() => setSantaOpen(false)}
             />
 
             <ItemAddDialog
