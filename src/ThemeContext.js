@@ -17,6 +17,7 @@ export function ThemeProvider({ children }) {
         root.style.setProperty('--theme-title-text', theme.titleText);
         root.style.setProperty('--theme-link-hover', theme.linkHover);
         root.style.setProperty('--theme-scroll-accent', theme.scrollAccent);
+        root.style.setProperty('--theme-scroll-accent-dark', theme.scrollAccentDark);
         root.setAttribute('data-theme', themeId);
 
         const faviconFile = themeId === 'christmas-forest' ? 'favicon.png' : 'faviconBlue.ico';

@@ -87,7 +87,7 @@ function ItemCard({
                     size="small"
                     sx={{
                         position: 'absolute', top: 8, right: 8, zIndex: 2,
-                        backgroundColor: '#F59E0B', color: 'white',
+                        backgroundColor: '#C44D58', color: 'white',
                         fontWeight: 600, fontSize: '0.65rem',
                     }}
                 />
@@ -239,8 +239,8 @@ function ItemCard({
                                     }}
                                     sx={{
                                         ...btnStyles,
-                                        backgroundColor: isReservedByMe ? '#757575' : '#D97706',
-                                        '&:hover': { backgroundColor: isReservedByMe ? '#616161' : '#B45309' },
+                                        backgroundColor: isReservedByMe ? '#757575' : '#C44D58',
+                                        '&:hover': { backgroundColor: isReservedByMe ? '#616161' : '#a63d49' },
                                     }}
                                 >
                                     {isReservedByMe ? 'Un-reserve' : 'Reserve'}

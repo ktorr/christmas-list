@@ -7,6 +7,7 @@ const THEMES = {
         titleText: '#D2F2FD',
         linkHover: '#3B6D8F',
         scrollAccent: '#8B0000',
+        scrollAccentDark: '#6a0000',
     },
     'christmas-forest': {
         name: 'Christmas Forest',
@@ -16,6 +17,7 @@ const THEMES = {
         titleText: '#9BA694',
         linkHover: '#8B0000',
         scrollAccent: '#8B0000',
+        scrollAccentDark: '#6a0000',
     },
 };
 

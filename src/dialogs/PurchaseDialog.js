@@ -16,7 +16,7 @@ function PurchaseDialog({ open, item, onConfirm, onClose }) {
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose} sx={{ color: 'var(--theme-primary)' }}>Cancel</Button>
+                <Button onClick={onClose} sx={{ color: '#C44D58' }}>Cancel</Button>
                 <Button
                     onClick={onConfirm}
                     variant="contained"
