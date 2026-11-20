@@ -19,7 +19,7 @@ import Alert from '@mui/material/Alert';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import SaveIcon from '@mui/icons-material/Save';
-import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import SecretSantaDialog from '../dialogs/SecretSantaDialog';
 
 function ListPage({ name, listId }) {
@@ -129,11 +129,11 @@ function ListPage({ name, listId }) {
             <div className="list-toolbar">
                 <Button
                     variant="outlined"
-                    startIcon={<CardGiftcardIcon />}
+                    startIcon={<FavoriteIcon className="btn-icon-mobile" />}
                     onClick={() => setSantaOpen(true)}
                     sx={{ color: 'var(--theme-primary)', borderColor: 'var(--theme-primary)' }}
                 >
-                    <span className="btn-label">Secret Santa</span>
+                    <span className="btn-label">{isOwnList ? 'Add Favorites' : 'View Favorites'}</span>
                 </Button>
                 {isOwnList && (
                     isEditMode ? (
