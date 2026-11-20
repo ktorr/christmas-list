@@ -20,7 +20,7 @@ const QUESTIONS = [
     { key: 'sportsTeam',  label: 'Sports Team(s)' },
     { key: 'moviesBooks', label: 'Favorite Movies / Books' },
     { key: 'scents',      label: 'Favorite Scents' },
-    { key: 'sizing',      label: 'Clothing & Shoe Sizing' },
+    { key: 'sizing',      label: 'Favorite Gift Cards' },
 ];
 
 function SecretSantaDialog({ open, name, listId, isOwn, onClose }) {
