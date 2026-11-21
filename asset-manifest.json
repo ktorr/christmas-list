@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/christmas-list/static/css/main.3f116962.css",
-    "main.js": "/christmas-list/static/js/main.7cc7a6f7.js",
+    "main.css": "/christmas-list/static/css/main.9be743b5.css",
+    "main.js": "/christmas-list/static/js/main.e70f74f4.js",
     "static/js/453.82c8c9a7.chunk.js": "/christmas-list/static/js/453.82c8c9a7.chunk.js",
     "static/media/SnowyForest.jpg": "/christmas-list/static/media/SnowyForest.940734b94282a06ca1cb.jpg",
     "static/media/ChristmasTree.jpg": "/christmas-list/static/media/ChristmasTree.3d350fe4cf92e03f4c86.jpg",
     "index.html": "/christmas-list/index.html",
-    "main.3f116962.css.map": "/christmas-list/static/css/main.3f116962.css.map",
-    "main.7cc7a6f7.js.map": "/christmas-list/static/js/main.7cc7a6f7.js.map",
+    "main.9be743b5.css.map": "/christmas-list/static/css/main.9be743b5.css.map",
+    "main.e70f74f4.js.map": "/christmas-list/static/js/main.e70f74f4.js.map",
     "453.82c8c9a7.chunk.js.map": "/christmas-list/static/js/453.82c8c9a7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f116962.css",
-    "static/js/main.7cc7a6f7.js"
+    "static/css/main.9be743b5.css",
+    "static/js/main.e70f74f4.js"
   ]
 }
